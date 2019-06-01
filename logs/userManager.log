@@ -1,0 +1,709 @@
+2019-05-30 21:58:57.125 [http-nio-8888-exec-9] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 21:58:57.135 [http-nio-8888-exec-9] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 21:58:57.285 [http-nio-8888-exec-10] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 21:58:57.399 [http-nio-8888-exec-1] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+### The error may involve com.course.addUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into         user(userName,password,sex,age,permission,isDelete)         values         (?,?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+; SQL []; Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:533)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:115)
+	at com.mysql.cj.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:1983)
+	at com.mysql.cj.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1826)
+	at com.mysql.cj.jdbc.PreparedStatement.execute(PreparedStatement.java:1153)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy77.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy64.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.course.controller.UserManage.addUser(UserManage.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-05-30 21:59:00.562 [http-nio-8888-exec-2] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 21:59:02.691 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 21:59:04.924 [http-nio-8888-exec-4] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 21:59:07.102 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:01:54.328 [http-nio-8888-exec-7] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:01:54.329 [http-nio-8888-exec-7] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:01:54.450 [http-nio-8888-exec-8] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:01:54.534 [http-nio-8888-exec-9] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+### The error may involve com.course.addUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into         user(userName,password,sex,age,permission,isDelete)         values         (?,?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+; SQL []; Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:533)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:115)
+	at com.mysql.cj.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:1983)
+	at com.mysql.cj.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1826)
+	at com.mysql.cj.jdbc.PreparedStatement.execute(PreparedStatement.java:1153)
+	at sun.reflect.GeneratedMethodAccessor42.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy77.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy64.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.course.controller.UserManage.addUser(UserManage.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-05-30 22:01:56.628 [http-nio-8888-exec-10] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:01:58.710 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:02:00.847 [http-nio-8888-exec-2] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:02:02.912 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:04:08.005 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:04:08.005 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:04:08.120 [http-nio-8888-exec-6] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:04:08.206 [http-nio-8888-exec-7] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+### The error may involve com.course.addUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into         user(userName,password,sex,age,permission,isDelete)         values         (?,?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+; SQL []; Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:533)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:115)
+	at com.mysql.cj.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:1983)
+	at com.mysql.cj.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1826)
+	at com.mysql.cj.jdbc.PreparedStatement.execute(PreparedStatement.java:1153)
+	at sun.reflect.GeneratedMethodAccessor42.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy77.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy64.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.course.controller.UserManage.addUser(UserManage.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-05-30 22:04:10.297 [http-nio-8888-exec-8] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:04:12.376 [http-nio-8888-exec-9] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:04:14.499 [http-nio-8888-exec-10] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:04:16.567 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:04:45.506 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:04:45.507 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:04:45.620 [http-nio-8888-exec-4] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:04:45.704 [http-nio-8888-exec-5] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+### The error may involve com.course.addUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into         user(userName,password,sex,age,permission,isDelete)         values         (?,?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+; SQL []; Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:533)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:115)
+	at com.mysql.cj.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:1983)
+	at com.mysql.cj.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1826)
+	at com.mysql.cj.jdbc.PreparedStatement.execute(PreparedStatement.java:1153)
+	at sun.reflect.GeneratedMethodAccessor42.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy77.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy64.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.course.controller.UserManage.addUser(UserManage.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-05-30 22:04:47.792 [http-nio-8888-exec-6] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:04:49.870 [http-nio-8888-exec-7] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:04:51.990 [http-nio-8888-exec-8] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:04:54.056 [http-nio-8888-exec-9] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:06:16.288 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:06:16.288 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:06:16.415 [http-nio-8888-exec-2] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:06:16.502 [http-nio-8888-exec-3] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+### The error may involve com.course.addUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into         user(userName,password,sex,age,permission,isDelete)         values         (?,?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+; SQL []; Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:533)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:115)
+	at com.mysql.cj.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:1983)
+	at com.mysql.cj.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1826)
+	at com.mysql.cj.jdbc.PreparedStatement.execute(PreparedStatement.java:1153)
+	at sun.reflect.GeneratedMethodAccessor42.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy77.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy64.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.course.controller.UserManage.addUser(UserManage.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-05-30 22:14:08.976 [http-nio-8888-exec-4] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:14:18.803 [http-nio-8888-exec-6] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:14:18.803 [http-nio-8888-exec-6] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:14:18.912 [http-nio-8888-exec-7] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:14:19.000 [http-nio-8888-exec-8] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+### The error may involve com.course.addUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into         user(userName,password,sex,age,permission,isDelete)         values         (?,?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+; SQL []; Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:533)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:115)
+	at com.mysql.cj.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:1983)
+	at com.mysql.cj.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1826)
+	at com.mysql.cj.jdbc.PreparedStatement.execute(PreparedStatement.java:1153)
+	at sun.reflect.GeneratedMethodAccessor42.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy77.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy64.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.course.controller.UserManage.addUser(UserManage.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-05-30 22:14:29.097 [http-nio-8888-exec-9] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:14:31.171 [http-nio-8888-exec-10] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:14:33.290 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:14:35.353 [http-nio-8888-exec-2] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:21:37.153 [http-nio-8888-exec-4] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:21:37.154 [http-nio-8888-exec-4] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:21:37.267 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:21:37.362 [http-nio-8888-exec-6] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+### The error may involve com.course.addUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into         user(userName,password,sex,age,permission,isDelete)         values         (?,?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+; SQL []; Duplicate entry '0' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '0' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:533)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:115)
+	at com.mysql.cj.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:1983)
+	at com.mysql.cj.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1826)
+	at com.mysql.cj.jdbc.PreparedStatement.execute(PreparedStatement.java:1153)
+	at sun.reflect.GeneratedMethodAccessor42.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy77.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy64.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.course.controller.UserManage.addUser(UserManage.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-05-30 22:21:47.511 [http-nio-8888-exec-7] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:21:49.583 [http-nio-8888-exec-8] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:21:51.703 [http-nio-8888-exec-9] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:21:53.764 [http-nio-8888-exec-10] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:30:21.053 [http-nio-8888-exec-2] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:30:21.053 [http-nio-8888-exec-2] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:30:21.162 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:30:21.243 [http-nio-8888-exec-4] INFO  com.course.controller.UserManage - 添加用户的数量是：1
+2019-05-30 22:30:31.324 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:30:33.395 [http-nio-8888-exec-6] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:30:35.517 [http-nio-8888-exec-7] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:30:37.577 [http-nio-8888-exec-8] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:32:55.882 [http-nio-8888-exec-10] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:32:55.883 [http-nio-8888-exec-10] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:32:55.999 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:32:56.080 [http-nio-8888-exec-2] INFO  com.course.controller.UserManage - 添加用户的数量是：1
+2019-05-30 22:33:06.157 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:33:08.234 [http-nio-8888-exec-4] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:33:10.367 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:33:12.432 [http-nio-8888-exec-6] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:39:01.970 [http-nio-8888-exec-8] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:39:01.971 [http-nio-8888-exec-8] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:39:02.128 [http-nio-8888-exec-9] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:39:02.266 [http-nio-8888-exec-10] INFO  com.course.controller.UserManage - 添加用户的数量是：1
+2019-05-30 22:39:12.382 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:44:36.249 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:44:50.988 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:44:50.989 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:44:51.139 [http-nio-8888-exec-6] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:44:51.248 [http-nio-8888-exec-7] INFO  com.course.controller.UserManage - 添加用户的数量是：1
+2019-05-30 22:45:01.367 [http-nio-8888-exec-8] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:45:03.474 [http-nio-8888-exec-9] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:45:05.676 [http-nio-8888-exec-10] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:45:07.776 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:48:02.371 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:48:02.372 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:48:02.522 [http-nio-8888-exec-4] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:48:02.625 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - 添加用户的数量是：1
+2019-05-30 22:48:12.741 [http-nio-8888-exec-6] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:48:14.837 [http-nio-8888-exec-7] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:48:17.007 [http-nio-8888-exec-8] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:48:19.088 [http-nio-8888-exec-9] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0
+2019-05-30 22:58:56.887 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - 查询到的结果是1
+2019-05-30 22:58:56.887 [http-nio-8888-exec-1] INFO  com.course.controller.UserManage - 登录的用户是：zhangsan
+2019-05-30 22:58:57.000 [http-nio-8888-exec-2] INFO  com.course.controller.UserManage - 查询到的结果是0
+2019-05-30 22:58:57.078 [http-nio-8888-exec-3] INFO  com.course.controller.UserManage - 添加用户的数量是：1
+2019-05-30 22:59:07.153 [http-nio-8888-exec-4] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是1
+2019-05-30 22:59:09.226 [http-nio-8888-exec-5] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:59:11.342 [http-nio-8888-exec-6] INFO  com.course.controller.UserManage - 更新数据的条目为：1
+2019-05-30 22:59:13.404 [http-nio-8888-exec-7] INFO  com.course.controller.UserManage - getUserInfo获取到用户数量是0

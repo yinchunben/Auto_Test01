@@ -6,11 +6,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Chapter5" />
+        <module name="Chaper13" />
+        <module name="Chapter10" />
+        <module name="Chapter11" />
+        <module name="Chapter121" />
+        <module name="Chapter9" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Chaper13" target="1.8" />
+      <module name="Chapter10" target="8" />
+      <module name="Chapter11" target="8" />
+      <module name="Chapter12" target="8" />
+      <module name="Chapter121" target="1.5" />
       <module name="Chapter5" target="1.5" />
+      <module name="Chapter6" target="6" />
+      <module name="Chapter9" target="1.5" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Chaper13" options="-extdirs C:\Users\Kerry_Amy\workspace\muke\Auto_Test01\Chaper13/lib" />
+      <module name="Chapter10" options="" />
+    </option>
   </component>
 </project>
